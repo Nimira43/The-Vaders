@@ -63,9 +63,9 @@ body {
   }
 }
 
-/* .navbar.change {
+.navbar.change {
   height: 100vh;
-} */
+}
 
 .logo {
   position: absolute;
@@ -88,8 +88,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* opacity: 0; */
-  /* visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   transition: all 0.2s;
 }
 
@@ -97,4 +97,18 @@ body {
   opacity: 1;
   visibility: visible;
   transition: all 0.7s 0.5s;
+}
+
+.nav-link {
+  font-family: var(--font-logo), sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+  color: var(--light);
+  margin: 2rem 0;
+  transition: color 0.4s;
+}
+
+.nav-link:hover {
+  color: var(--primary);
 }

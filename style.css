@@ -64,3 +64,20 @@ body {
   }
 }
 
+/* .navbar.change {
+  height: 100vh;
+} */
+
+.logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 4rem;
+}
+
+.logo a {
+  font-family: var(--font-logo);
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--primary);
+
+}

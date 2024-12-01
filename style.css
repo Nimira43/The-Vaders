@@ -1,1 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=League+Spartan:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #ff4500;
+  --secondary-lg: #008080;
+  --secondary-dk: #012222;
+  --dark: #111;
+  --light: #fffaf0;
+  --grey-xl: #eee;
+  --grey-lg: #ccc;
+  --grey-md: #888;
+  --grey-dk: #333;
+  --sky: #87ceeb;
+  --b-rad: 3px;
+  --size-1: 1px;
+  --size-2: 2px;
+  --size-3: 3px;
+  --size-xs: 5px;
+  --size-sm: 10px;
+  --size-md: 15px;
+  --size-lg: 20px;
+  --size-xl: 25px;
+  --font-main: 'League Spartan', sans-serif;
+  --font-logo: 'Amatic SC', sans-serif;
+  --transition: all 0.3s ease-in;
+}

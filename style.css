@@ -252,6 +252,11 @@ body {
   animation: fadeAnimation 1s 1.5s forwards;
 }
 
+.banner-btn {
+  width: 30rem;
+  height: 6rem;
+}
+
 @media (max-width: 1800px) {
 
 }

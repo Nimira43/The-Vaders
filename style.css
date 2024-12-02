@@ -179,6 +179,12 @@ body {
   overflow: hidden;
 }
 
+.banner-heading span {
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 12rem;
+  font-weight: bold;
+}
+
 @media (max-width: 1800px) {
 
 }

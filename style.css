@@ -163,6 +163,15 @@ body {
   position: relative;
 }
 
+.banner {
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
 @media (max-width: 1800px) {
 
 }

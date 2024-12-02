@@ -216,6 +216,16 @@ body {
     opacity: 0;
     leter-spacing: 3rem;
   }
+  3% {
+    transform: translateZ(0);
+    opacity: 1;
+    leter-spacing: 1.5rem;
+  }
+  25% {
+    transform: translateZ(0);
+    opacity: 1;
+    leter-spacing: 1.5rem;
+  }
 }
 
 @media (max-width: 1800px) {

@@ -255,6 +255,17 @@ body {
 .banner-btn {
   width: 30rem;
   height: 6rem;
+  background: var(--primary);
+  color: var(--light);
+  font-size: 2rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  border-radius: var(--b-rad);
+  border: 0.1rem solid var(--light);
+  cursor: pointer;
+  animation: fadeAnimation 1s 2s forwards;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 1800px) {

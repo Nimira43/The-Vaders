@@ -185,7 +185,11 @@ body {
   font-weight: bold;
   color: var(--light);
   text-shadow: 2px 2px 2px var(--primary);
-  
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateZ(8rem);
 }
 
 @media (max-width: 1800px) {

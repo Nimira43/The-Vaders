@@ -183,6 +183,9 @@ body {
   font-family: 'Amatic SC', sans-serif;
   font-size: 12rem;
   font-weight: bold;
+  color: var(--light);
+  text-shadow: 2px 2px 2px var(--primary);
+  
 }
 
 @media (max-width: 1800px) {

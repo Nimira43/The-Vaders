@@ -113,37 +113,7 @@ body {
   color: var(--primary);
 }
 
-@media (max-width: 1800px) {
 
-}
-@media (max-width: 1650px) {
-  html {
-    font-size: 57%;
-  }
-}
-@media (max-width: 1500px) {
-
-}
-@media (max-width: 1400px) {
-  html {
-    font-size: 45%;
-  }
-}
-@media (max-width: 900px) {
-  html {
-    font-size: 40%;
-  }
-}
-@media (max-width: 700px) {
-  html {
-    font-size: 35%;
-  }
-}
-@media (max-width: 500px) {
-  html {
-    font-size: 30%;
-  }
-}
 
 .menu {
   width: 4rem;
@@ -182,4 +152,37 @@ body {
 .change .line-3 {
   transform: translateY(-1rem) rotate(35deg);
   transform-origin: right;
+}
+
+
+@media (max-width: 1800px) {
+
+}
+@media (max-width: 1650px) {
+  html {
+    font-size: 57%;
+  }
+}
+@media (max-width: 1500px) {
+
+}
+@media (max-width: 1400px) {
+  html {
+    font-size: 45%;
+  }
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media (max-width: 700px) {
+  html {
+    font-size: 35%;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 30%;
+  }
 }

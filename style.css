@@ -172,6 +172,13 @@ body {
   text-align: center;
 }
 
+.banner-heading {
+  margin-bottom: 4rem;
+  height: 20rem;
+  perspective: 50rem;
+  overflow: hidden;
+}
+
 @media (max-width: 1800px) {
 
 }

@@ -201,11 +201,21 @@ body {
 .heading-2 {
   animation: animateHeading 12s 6s infinite;
 }
+
 .heading-3 {
   animation: animateHeading 12s 9s infinite;
 }
+
 .heading-4 {
   animation: animateHeading 12s 12s infinite;
+}
+
+@keyframes animateHeading {
+  0% {
+    transform: translateZ(8rem);
+    opacity: 0;
+    leter-spacing: 3rem;
+  }
 }
 
 @media (max-width: 1800px) {

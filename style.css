@@ -184,7 +184,7 @@ body {
   font-size: 12rem;
   font-weight: bold;
   color: var(--light);
-  text-shadow: 2px 2px 2px var(--primary);
+  text-shadow: 2px 2px 2px var(--dark);
   position: absolute;
   width: 100%;
   display: flex;
@@ -236,6 +236,20 @@ body {
     opacity: 0;
     leter-spacing: 3rem;
   }
+}
+
+.banner-paragraph {
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--light);
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 30%;
+  margin: 0 auto 4rem auto;
+  padding: 1rem 0;
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeAnimation 1s 1.5s forwards;
 }
 
 @media (max-width: 1800px) {

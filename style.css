@@ -341,6 +341,15 @@ body {
   transition: opacity 0.3s;
 }
 
+.controls {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateY(calc(100% - 0.4rem));
+  transition: transform 0.4s;
+}
+
 @media (max-width: 1800px) {
 
 }

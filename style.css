@@ -289,6 +289,16 @@ body {
   left: 100%;
 }
 
+@keyframes fadesAnimation {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacitiy: 1;
+    visibility: visible;
+  }
+}
 
 @media (max-width: 1800px) {
 

@@ -350,4 +350,31 @@ body {
     font-size: 4.5rem;
     letter-spacing: 2rem;
   }
+  @keyframes animateHeading {
+    0% {
+      transform: translateZ(8rem);
+      opacity: 0;
+      leter-spacing: 2rem;
+    }
+    3% {
+      transform: translateZ(0);
+      opacity: 1;
+      leter-spacing: 1rem;
+    }
+    25% {
+      transform: translateZ(0);
+      opacity: 1;
+      leter-spacing: 1rem;
+    }
+    28% {
+      transform: translateZ(8rem);
+      opacity: 0;
+      leter-spacing: 2rem;
+    }
+    100% {
+      transform: translateZ(8rem);
+      opacity: 0;
+      leter-spacing: 2rem;
+    }
+  }
 }

@@ -318,6 +318,10 @@ body {
   .banner-heading span {
     font-size: 10rem;
   }
+  .banner-paragraph {
+    width: 45rem;
+    font-size: 3rem;
+  }
 }
 @media (max-width: 900px) {
   html {

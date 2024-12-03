@@ -42,6 +42,19 @@ body {
   font-family: var(--font-main);
 }
 
+.section-heading {
+  font-size: 10rem;
+  font-weight: 300;
+  color: var(--grey-lg);
+  margin-right: 4rem;
+}
+
+.section-heading-line {
+  width: 15rem;
+  height: 0.2rem;
+  background-color: var(--grey-lg);
+}
+
 .navbar {
   width: 100%;
   height: 8rem;

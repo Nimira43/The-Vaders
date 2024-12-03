@@ -315,6 +315,9 @@ body {
   html {
     font-size: 45%;
   }
+  .banner-heading span {
+    font-size: 10rem;
+  }
 }
 @media (max-width: 900px) {
   html {

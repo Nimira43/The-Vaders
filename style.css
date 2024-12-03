@@ -327,6 +327,15 @@ body {
   html {
     font-size: 40%;
   }
+  .banner {
+    top: 25%;
+  }
+  .banner-heading {
+    height: 15rem;
+  }
+  .banner-heading span {
+    font-size: 8rem;
+  }
 }
 @media (max-width: 700px) {
   html {

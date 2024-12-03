@@ -323,6 +323,16 @@ body {
   position: relative;
 }
 
+.video-wrapper {
+  width: 100rem;
+  height: 50rem;
+  position: absolute;
+  top: 5rem;
+  right: 15rem;
+  border: var(--size-2) solid var(--primary);
+  overflow: hidden;
+}
+
 @media (max-width: 1800px) {
 
 }

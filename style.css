@@ -52,7 +52,7 @@ body {
 .section-heading-line {
   width: 15rem;
   height: 0.2rem;
-  background-color: var(--grey-lg);
+  background-color: var(--primary);
 }
 
 .navbar {

@@ -385,6 +385,25 @@ body {
   color: var(--light);
 }
 
+.section-2-paragraph {
+  width: 100rem;
+  position: absolute;
+  bottom: 8rem;
+  right: 15rem;
+  font-size: 2rem;
+  color: var(--light);
+  border-top: 0.3rem solid var(--dark);
+  border-bottom: 0.3rem solid var(--dark);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.7);
+  line-height: 1.5;
+}
+
 @media (max-width: 1800px) {
 
 }

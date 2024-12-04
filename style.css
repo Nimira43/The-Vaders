@@ -350,6 +350,10 @@ body {
   transition: transform 0.4s;
 }
 
+.video-wrapper:hover .controls {
+  transform: translateY(0)
+}
+
 @media (max-width: 1800px) {
 
 }

@@ -404,6 +404,18 @@ body {
   line-height: 1.5;
 }
 
+.fa-quote-left {
+  align-self: flex-start;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.fa-quote-right {
+  align-self: flex-end;
+  font-size: 5rem;
+
+}
+
 @media (max-width: 1800px) {
 
 }

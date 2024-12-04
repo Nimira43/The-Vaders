@@ -367,7 +367,7 @@ body {
   height: 100%;
   width: 0;
   background-color: var(--primary);
-  transition: width 0.3s linear;
+  transition: width 0.2s linear;
 }
 
 .buttons {

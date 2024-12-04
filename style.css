@@ -370,6 +370,20 @@ body {
   transition: width 0.3s linear;
 }
 
+.buttons {
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.buttons i {
+  font-size: 2.8rem;
+  color: var(--light);
+}
 
 @media (max-width: 1800px) {
 

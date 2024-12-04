@@ -363,6 +363,13 @@ body {
   left: 0;
 }
 
+.video-bar {
+  height: 100%;
+  width: 0;
+  background-color: var(--primary);
+  transition: width 0.3s linear;
+}
+
 
 @media (max-width: 1800px) {
 

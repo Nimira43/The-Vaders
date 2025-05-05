@@ -30,8 +30,10 @@ class Projectile {
     this.speed = 20
     this.free = true
   }
-  draw() {
-
+  draw(context) {
+    if (!this.free) {
+      context.fillRect(this.x, this.y, this.width, this.height)
+    }
   }
   update() {
 

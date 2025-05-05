@@ -183,12 +183,15 @@ class Game {
     this.numberOfProjectiles = 10
     this.createProjectiles()
     this.fired = false
-    this.columns = 2
-    this.rows = 2
-    this.enemySize = 60
+    this.columns = 1
+    this.rows = 1
+    this.enemySize = 80
     this.waves = []
     this.waves.push(new Wave(this))
     this.waveCount = 1
+    this.spriteUpdate = false
+    this.spriteTimer = 0
+    this.spriteInterval = 150
     this.score = 0
     this.gameOver = false
 

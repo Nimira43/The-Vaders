@@ -17,7 +17,6 @@ class Player {
     else if (this.x > this.game.width - this.width * 0.5) this.x = this.game.width - this.width * 0.5
   }
   shoot() {
-    
   }
 }
 
@@ -101,7 +100,9 @@ class Game {
     this.player.update()
   }
   createProjectiles() {
-
+    for (let i = 0; i < this.numberOfProjectiles; i++) {
+      this.projectilesPool.Pool.push(new Projectile())
+    }
   }
   getProjectile() {
 

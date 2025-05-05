@@ -30,3 +30,28 @@ class Projectile {
 
   }
 }
+
+class Enemy {
+  constructor() {
+
+  }
+  draw() {
+
+  }
+  update() {
+
+  }
+}
+
+class Wave {
+  constructor() {
+
+  }
+  render() {
+
+  }
+  create() {
+
+  }
+}
+

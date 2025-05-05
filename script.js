@@ -7,6 +7,11 @@ class Player {
     this.y = this.game.height - this.height;
     this.speed = 10
     this.lives = 3
+    this.maxLives = 10
+    this.image = document.getElementById('player')
+    this.jet_image = document.getElementById('player_jets')
+    this.frameX = 0
+    this.jetsFrame = 1  
   }
 
   draw(context) {

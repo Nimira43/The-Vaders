@@ -80,6 +80,7 @@ class Enemy {
       if (!projectile.free && this.game.checkCollision(this, projectile)) {
         this.markedForDeletion = true
         projectile.reset()
+        if (!this.game.gameOver) this.game.score++
       }
     })
   }

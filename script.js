@@ -128,13 +128,20 @@ class Game {
     this.projectilesPool = []
     this.numberOfProjectiles = 10
     this.createProjectiles()
-    this.columns = 5
-    this.rows = 7
+    this.fired = false
+    this.columns = 2
+    this.rows = 2
     this.enemySize = 60
     this.waves = []
     this.waves.push(new Wave(this))
+    this.waveCount = 1
+    this.score = 0
+    this.gameOver = false
+
+    // Update EvenListeners
 
     window.addEventListener('keydown', e => {
+
       if (this.keys.indexOf(e.key) === -1) this.keys.push(e.key)
       if (e.key === '1') this.player.shoot()
     })
@@ -153,6 +160,9 @@ class Game {
     })
     this.waves.forEach(wave => {
       wave.render(context)
+
+      // Expand
+
     })
   }
   createProjectiles() {
@@ -172,6 +182,15 @@ class Game {
       a.y < b.y + b.height &&
       a.y + a.height > b.y
     )
+  }
+  drawStatusText(context) {
+
+  }
+  newWave() {
+
+  }
+  restart() {
+
   }
 }
 

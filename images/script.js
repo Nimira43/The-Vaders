@@ -105,7 +105,9 @@ class Game {
     }
   }
   getProjectile() {
-
+    for (let i = 0; i < this.projectilesPool.length; i++) {
+      if (this.projectilesPool[i].free) return this.projectilesPool[i]
+    }
   }
   checkCollision() {
 

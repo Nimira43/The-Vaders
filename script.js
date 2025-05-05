@@ -21,6 +21,9 @@ class Player {
     const projectile = this.game.getProjectile()
     if (projectile) projectile.start(this.x + this.width * 0.5, this.y)
   }
+  restart() {
+
+  }
 }
 
 class Projectile {
@@ -90,6 +93,7 @@ class Wave {
     this.speedX = 3
     this.speedY = 0
     this.enemies = []
+    this.nextWaveTrigger = false
     this.create()
   }
   render(context) {
@@ -202,6 +206,7 @@ window.addEventListener('load', function () {
   ctx.fillStyle = 'white'
   ctx.strokeStyle = 'white'
   ctx.lineWidth = 5
+  ctx.font = '30px Verdana'
 
   const game = new Game(canvas)
   

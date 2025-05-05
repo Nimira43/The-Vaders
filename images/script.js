@@ -62,7 +62,8 @@ class Enemy {
     this.positionX = positionX
     this.positionY = positionY
   }
-  draw() {
+  draw(context) {
+    context.strokeRect(this.x, this.y. this.width, this.height)
 
   }
   update() {

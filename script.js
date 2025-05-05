@@ -196,7 +196,14 @@ class Game {
 
   }
   restart() {
-
+    this.player.restart()
+    this.columns = 2
+    this.rows = 2
+    this.wave = []
+    this.waves.push(new Wave(this))
+    this.waveCount = 1
+    this.score = 0
+    this.gameOVer = false
   }
 }
 

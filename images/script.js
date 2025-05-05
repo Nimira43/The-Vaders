@@ -107,7 +107,7 @@ class Wave {
     this.enemies = this.enemies.filter(object => !object.markedForDeletion)
   }
   create() {
-
+    for (let y = 0; y < this.game.rows; y++) {}
   }
 }
 
@@ -121,7 +121,12 @@ class Game {
     this.projectilesPool = []
     this.numberOfProjectiles = 10
     this.createProjectiles()
+    this.columns = 5
+    this.rows = 7
     this.enemySize = 60
+    this.waves = []
+    this.waves.push(new Wave(this))
+
 
     window.addEventListener('keydown', e => {
       if (this.keys.indexOf(e.key) === -1) this.keys.push(e.key)
@@ -139,6 +144,9 @@ class Game {
     this.projectilesPool.forEach(projectile => {
       projectile.update()
       projectile.draw(context)
+    })
+    this.waves.forEach(wave => {
+      wave.render(context)
     })
   }
   createProjectiles() {

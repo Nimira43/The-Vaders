@@ -114,6 +114,9 @@ class Enemy {
       this.markedForDeletion = true
     }
   }
+  hit(damage) {
+    
+  }
 }
 
 class Wave {

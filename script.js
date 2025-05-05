@@ -87,7 +87,7 @@ class Enemy {
       this.markedForDeletion = true
       if (!this.game.gameOver && this.game.score > 0) this.game.score--
       this.game.player.lives--
-      if (this.game.player.lives < 1) this.game.gameOVerOver = true
+      if (this.game.player.lives < 1) this.game.gameOver = true
     }
     if (this.y + this.height > this.game.height) {
       this.game.gameOver = true

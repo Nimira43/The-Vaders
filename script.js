@@ -303,11 +303,14 @@ window.addEventListener('load', function() {
 
   const game = new Game(canvas)
   
-  function animate() {
+  let lastTime = 0
+  function animate(timeStamp) {
+    const deltaTime = timeStamp - lastTime
+    lastTime = timeStamp
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    game.render(ctx)
+    game.render(ctx, deltaTime)
     requestAnimationFrame(animate)
   }
 
-  animate()
+  animate(0)
 })

@@ -36,13 +36,18 @@ class Projectile {
     }
   }
   update() {
-
+    if (!this.free) {
+      this.y -= this.speed
+      if (this.y < -this.height) this.reset()
+    }
   }
-  start() {
-
+  start(x, y) {
+    this.x = x - this.width * 0.5
+    this.y = y
+    this.free = false
   }
   reset() {
-
+    this.free = true
   }
 }
 

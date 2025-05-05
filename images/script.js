@@ -1,5 +1,5 @@
 class Player {
-  constructor() {
+  constructor(game) {
 
   }
   draw() {
@@ -32,7 +32,7 @@ class Projectile {
 }
 
 class Enemy {
-  constructor() {
+  constructor(game) {
 
   }
   draw() {
@@ -44,7 +44,7 @@ class Enemy {
 }
 
 class Wave {
-  constructor() {
+  constructor(game) {
 
   }
   render() {
@@ -57,9 +57,11 @@ class Wave {
 
 class Game {
   constructor(canvas) {
-  
+    this.canvas = canvas
+    this.width = this.canvas.width
+    this.height = this.canvas.height
   }
-  render() {
+  render(context) {
 
   }
   createProjectiles() {

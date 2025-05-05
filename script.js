@@ -83,6 +83,16 @@ class Enemy {
         if (!this.game.gameOver) this.game.score++
       }
     })
+    if (this.game.checkCollision(this, this.game.player)) {
+      this.markedForDeletion = true
+      if (!this.game.gameOver && this.game.score > 0) this.game.score--
+      this.game.player.lives--
+      if (this.game.player.lives < 1) this.game.gameOVerOver = true
+    }
+    if (this.y + this.height > this.game.height) {
+      this.game.gameOver = true
+      this.markedForDeletion = true
+    }
   }
 }
 
@@ -159,6 +169,7 @@ class Game {
 
   }
   render(context) {
+    this.drawStatusText(context)
     this.player.draw(context)
     this.player.update()
     this.projectilesPool.forEach(projectile => {
@@ -213,7 +224,7 @@ class Game {
     this.waves.push(new Wave(this))
     this.waveCount = 1
     this.score = 0
-    this.gameOVer = false
+    this.gameOver = false
   }
 }
 

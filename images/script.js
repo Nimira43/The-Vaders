@@ -107,7 +107,7 @@ class Game {
   }
   createProjectiles() {
     for (let i = 0; i < this.numberOfProjectiles; i++) {
-      this.projectilesPool.Pool.push(new Projectile())
+      this.projectilesPool.push(new Projectile())
     }
   }
   getProjectile() {

@@ -23,7 +23,12 @@ class Player {
 
 class Projectile {
   constructor() {
-
+    this.width = 8
+    this.height = 40
+    this.x = 0
+    this.y = 0
+    this.speed = 20
+    this.free = true
   }
   draw() {
 

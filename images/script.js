@@ -67,7 +67,14 @@ class Enemy {
 
   }
   update() {
-
+    this.x = x + this.positionX
+    this.y = y + this.positionY
+    this.game.projectilesPool.forEach(projectile => {
+      if (!projectile.free && this.game.checkCollision(this.projectile)) {
+        this.markedForDeletion = true
+        projectile.reset()
+      }
+    })
   }
 }
 

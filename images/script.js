@@ -91,8 +91,13 @@ class Wave {
     this.enemies = []
   
   }
-  render() {
-
+  render(context) {
+    if (this.y < 0) this.y += 5
+    this.speedY = 0
+    if (this.x < 0 || this.x > this.game.width - this.width) {
+      this.speedX *= -1
+      this.speedY = this.game.enemySize
+    }
   }
   create() {
 

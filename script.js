@@ -167,8 +167,12 @@ class Game {
     })
     this.waves.forEach(wave => {
       wave.render(context)
-
-      // Expand
+      if (wave.enemies.length < 1 && !wave.nextWaveTrigger & !this.gameOver) {
+        this.newWave()
+        this.waveCount++
+        wave.nextWaveTigger = true
+        this.player.lives++
+      }
 
     })
   }

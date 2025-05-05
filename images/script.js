@@ -75,6 +75,9 @@ class Game {
     this.height = this.canvas.height
     this.keys = []
     this.player = new Player(this)
+    this.projectilesPool = []
+    this.numberOfProjectiles = 10
+    this.createProjectiles()
 
     window.addEventListener('keydown', e => {
       if (this.keys.indexOf(e.key) === -1) this.keys.push(e.key)

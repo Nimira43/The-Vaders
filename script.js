@@ -206,7 +206,23 @@ class Game {
     )
   }
   drawStatusText(context) {
-
+    context.save() 
+    context.shadowOffsetX = 2
+    context.shadowOffsetY = 2
+    context.shadowColor = 'black'
+    context.fillText('Score: ' + this.score, 20, 40)
+    context.fillText('Wave: ' + this.waveCount, 20, 80)
+    for (let i = 0; i < this.player.lives; i++) {
+      context.fillRect(20 + 10 * i, 100, 5, 20)
+    }
+    if (this.gameOver) {
+      context.textAlign = 'center'
+      context.font = '100px Verdana'
+      context.fillText('Game Over', this.width * 0.5, this.height * 0.5)
+      context.font = '20px Verdana'
+      context.fillText('Press R to Restart.', this.width * 0.5, this.height * 0.5 + 30)
+    }
+    context.restore()
   }
   newWave() {
     if (Math.random() < 0.5 && this.columns * this.enemySize < this.width * 0.8) {

@@ -144,14 +144,14 @@ class Game {
     this.score = 0
     this.gameOver = false
 
-    // Update EvenListeners
-
     window.addEventListener('keydown', e => {
-
+      if (e.key === '1' && !this.fired) this.player.shoot() 
+      this.fired = true
       if (this.keys.indexOf(e.key) === -1) this.keys.push(e.key)
-      if (e.key === '1') this.player.shoot()
+      if (e.key === 'r' && this.gameOver) this.restart()
     })
     window.addEventListener('keyup', e => {
+      this.fired = false
       const index = this.keys.indexOf(e.key)
       if (index > -1) this.keys.splice(index, 1)
     })

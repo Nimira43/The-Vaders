@@ -55,3 +55,20 @@ class Wave {
   }
 }
 
+class Game {
+  constructor() {
+  
+  }
+  render() {
+
+  }
+  createProjectiles() {
+
+  }
+  getProjectile() {
+
+  }
+  checkCollision() {
+
+  }
+}

@@ -64,14 +64,14 @@ class Enemy {
     this.markedForDeletion = false
   }
   draw(context) {
-    context.strokeRect(this.x, this.y. this.width, this.height)
+    context.strokeRect(this.x, this.y, this.width, this.height)
 
   }
   update(x, y) {
     this.x = x + this.positionX
     this.y = y + this.positionY
     this.game.projectilesPool.forEach(projectile => {
-      if (!projectile.free && this.game.checkCollision(this.projectile)) {
+      if (!projectile.free && this.game.checkCollision(this, projectile)) {
         this.markedForDeletion = true
         projectile.reset()
       }
@@ -107,7 +107,13 @@ class Wave {
     this.enemies = this.enemies.filter(object => !object.markedForDeletion)
   }
   create() {
-    for (let y = 0; y < this.game.rows; y++) {}
+    for (let y = 0; y < this.game.rows; y++) {
+      for (let x = 0; x < this.game.columns; x++) {
+        let enemyX = x * this.game.enemySize
+        let enemyY = y * this.game.enemySize
+        this.enemies.push(new Enemy(this.game, enemyX, enemyY))
+      }
+    }
   }
 }
 
@@ -126,7 +132,6 @@ class Game {
     this.enemySize = 60
     this.waves = []
     this.waves.push(new Wave(this))
-
 
     window.addEventListener('keydown', e => {
       if (this.keys.indexOf(e.key) === -1) this.keys.push(e.key)

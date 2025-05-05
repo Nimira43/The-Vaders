@@ -53,8 +53,14 @@ class Projectile {
 }
 
 class Enemy {
-  constructor(game) {
-
+  constructor(game, positionX, positionY) {
+    this.game = game
+    this.width = this.game.enemySize
+    this.height = this.game.enemySize
+    this.x = 0
+    this.y = 0
+    this.positionX = positionX
+    this.positionY = positionY
   }
   draw() {
 
@@ -86,6 +92,7 @@ class Game {
     this.projectilesPool = []
     this.numberOfProjectiles = 10
     this.createProjectiles()
+    this.enemySize = 60
 
     window.addEventListener('keydown', e => {
       if (this.keys.indexOf(e.key) === -1) this.keys.push(e.key)

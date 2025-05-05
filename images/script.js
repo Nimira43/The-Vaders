@@ -89,7 +89,7 @@ class Wave {
     this.speedX = 3
     this.speedY = 0
     this.enemies = []
-  
+    this.create()
   }
   render(context) {
     if (this.y < 0) this.y += 5
@@ -98,6 +98,13 @@ class Wave {
       this.speedX *= -1
       this.speedY = this.game.enemySize
     }
+    this.x += this.speedX
+    this.y += this.speedY
+    this.enemies.forEach(enemy => {
+      enemy.update(this.x, this.y)
+      enemy.draw(context)
+    })
+    this.enemies = this.enemies.filter(object => !object.markedForDeletion)
   }
   create() {
 

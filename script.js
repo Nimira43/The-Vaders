@@ -22,7 +22,9 @@ class Player {
     if (projectile) projectile.start(this.x + this.width * 0.5, this.y)
   }
   restart() {
-
+    this.x = this.game.width * 0.5 - this.width * 0.5
+    this.y = this.game.height - this.height
+    this.live = 3
   }
 }
 

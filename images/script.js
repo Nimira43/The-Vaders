@@ -98,6 +98,10 @@ class Game {
   render(context) {
     this.player.draw(context)
     this.player.update()
+    this.projectilesPool.forEach(projectile => {
+      projectile.update()
+      projectile.draw(context)
+    })
   }
   createProjectiles() {
     for (let i = 0; i < this.numberOfProjectiles; i++) {

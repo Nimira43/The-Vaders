@@ -10,3 +10,9 @@ body {
   translate: -50% -50%;
   background: url('./images/bg.png');
 }
+
+#beetlemorph,
+#player,
+#player_jets {
+  display: none;
+}

@@ -161,9 +161,34 @@ class Rhinomorph extends Enemy {
     this.lives = 4
     this.maxLives = this.lives
   }
+  
   hit(damage) {
     this.lives -= damage
     this.frameX = this.maxLives - Math.floor(this.lives)
+  }
+}
+
+class Boss {
+  constructor(game, bossLives) {
+    this.game = game
+    this.width = 200
+    this.height = 200
+    this.x = this.game.width * 0.5 - this.width * 0.5
+    this.y = -this.height
+    this.speedX = Math.random() < 0.5 ? -1 : 1
+    this.speedY = 0
+    this.lives = bossLives
+    this.maxLives = this.lives
+    this.markedForDeletion =false
+    this.image = document.getElementById('boss')
+    this.frameX = 1
+    this.frameY = Math.floor(Math.random() * 4)
+    this.maxFrame = 11
+  }
+
+  hit(damage) {
+    this.lives -= damage
+    if (this.lives > 0) this.frameX = 1
   }
 }
 

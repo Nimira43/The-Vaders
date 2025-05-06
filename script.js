@@ -315,13 +315,15 @@ class Game {
     this.rows = 1
     this.enemySize = 80
     this.waves = []
-    this.waves.push(new Wave(this))
     this.waveCount = 1
     this.spriteUpdate = false
     this.spriteTimer = 0
     this.spriteInterval = 150
     this.score = 0
     this.gameOver = false
+    this.bossArray = []
+    this.bossLives = 10
+    this.restart()
 
     window.addEventListener('keydown', e => {
       if (e.key === '1' && !this.fired) this.player.shoot() 

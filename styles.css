@@ -14,6 +14,7 @@ body {
 #beetlemorph,
 #rhinomorph,
 #player,
-#player_jets {
+#player_jets,
+#boss {
   display: none;
 }

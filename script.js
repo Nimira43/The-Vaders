@@ -214,6 +214,7 @@ class Boss {
     this.x += this.speedX
     this.y += this.speedY
     this.game.projectilesPool.forEach(projectile => {
+      
       if (
         this.game.checkCollision(this.projectile) &&
         !projectile.free &&
@@ -225,6 +226,10 @@ class Boss {
       }
     })
 
+    if (this.game.checkCollision(this, this.game.player) && this.lives > 0) {
+      this.game.gameOver = true
+      this.lives = 0
+    }
   }
 
   hit(damage) {

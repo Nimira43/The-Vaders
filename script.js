@@ -2,6 +2,7 @@ class Laser {
   constructor(game) {
 
   }
+  
   render(context) {
 
   }
@@ -11,6 +12,7 @@ class SmallLaser extends Laser {
   constructor(game) {
     super(game)
   }
+  
   render(context) {
 
   }
@@ -20,6 +22,7 @@ class BigLaser extends Laser {
   constructor(game) {
     super(game) 
   }
+  
   render(context) {
 
   }
@@ -76,6 +79,7 @@ class Player {
 
   shoot() {
     const projectile = this.game.getProjectile()
+    
     if (projectile) projectile.start(this.x + this.width * 0.5, this.y)
   }
   
@@ -108,6 +112,7 @@ class Projectile {
   update() {
     if (!this.free) {
       this.y -= this.speed
+      
       if (this.y < -this.height) this.reset()
     }
   }
@@ -151,9 +156,12 @@ class Enemy {
     })
 
     if (this.lives < 1) {
+      
       if (this.game.spriteUpdate) this.frameX++
+      
       if (this.frameX > this.maxFrame) {
         this.markedForDeletion = true
+        
         if (!this.game.gameOver) this.game.score += this.maxLives
       }
     }
@@ -221,6 +229,7 @@ class Boss {
 
   draw(context) {
     context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height)
+    
     if (this.lives > 0) {
       context.save() 
       context.textAlign = 'center'
@@ -234,8 +243,11 @@ class Boss {
 
   update() {
     this.speedY = 0
+
     if (this.game.spriteUpdate && this.lives > 0) this.frameX = 0
+    
     if (this.y < 0) this.y += 4
+    
     if (
       this.x < 0 ||
       this.x > this.game.width - this.width &&
@@ -244,6 +256,7 @@ class Boss {
       this.speedX *= -1
       this.speedY = this.height * 0.5
     }
+
     this.x += this.speedX
     this.y += this.speedY
     this.game.projectilesPool.forEach(projectile => {
@@ -281,6 +294,7 @@ class Boss {
 
   hit(damage) {
     this.lives -= damage
+
     if (this.lives > 0) this.frameX = 1
   }
 }
@@ -303,10 +317,12 @@ class Wave {
   render(context) {
     if (this.y < 0) this.y += 5
     this.speedY = 0
+    
     if (this.x < 0 || this.x > this.game.width - this.width) {
       this.speedX *= -1
       this.speedY = this.game.enemySize
     }
+    
     this.x += this.speedX
     this.y += this.speedY
     this.enemies.forEach(enemy => {
@@ -323,6 +339,7 @@ class Wave {
       for (let x = 0; x < this.game.columns; x++) {
         let enemyX = x * this.game.enemySize
         let enemyY = y * this.game.enemySize
+        
         if (Math.random() < 0.5) {
           this.enemies.push(new Rhinomorph(this.game, enemyX, enemyY))  
         } else {
@@ -361,13 +378,16 @@ class Game {
     window.addEventListener('keydown', e => {
       if (e.key === '1' && !this.fired) this.player.shoot() 
       this.fired = true
+      
       if (this.keys.indexOf(e.key) === -1) this.keys.push(e.key)
+      
       if (e.key === 'r' && this.gameOver) this.restart()
     })
     
     window.addEventListener('keyup', e => {
       this.fired = false
       const index = this.keys.indexOf(e.key)
+      
       if (index > -1) this.keys.splice(index, 1)
     })
   }
@@ -395,6 +415,7 @@ class Game {
     this.player.update()
     this.waves.forEach(wave => {
       wave.render(context)
+      
       if (wave.enemies.length < 1 && !wave.nextWaveTrigger & !this.gameOver) {
         this.newWave()
         wave.nextWaveTrigger = true
@@ -410,6 +431,7 @@ class Game {
 
   getProjectile() {
     for (let i = 0; i < this.projectilesPool.length; i++) {
+      
       if (this.projectilesPool[i].free) return this.projectilesPool[i]
     }
   }
@@ -430,12 +452,15 @@ class Game {
     context.shadowColor = 'black'
     context.fillText('Score: ' + this.score, 20, 40)
     context.fillText('Wave: ' + this.waveCount, 20, 80)
+    
     for (let i = 0; i < this.player.maxLives; i++) {
       context.strokeRect(20 + 20 * i, 100, 10, 15)
     }
+    
     for (let i = 0; i < this.player.lives; i++) {
       context.fillRect(20 + 20 * i, 100, 10, 15)
     }
+    
     if (this.gameOver) {
       context.textAlign = 'center'
       context.font = '100px Verdana'
@@ -443,23 +468,28 @@ class Game {
       context.font = '20px Verdana'
       context.fillText('Press R to Restart.', this.width * 0.5, this.height * 0.5 + 30)
     }
+    
     context.restore()
   }
 
   newWave() {
     this.waveCount++
+    
     if (this.player.lives < this.player.maxLives) this.player.lives++
 
     if (this.waveCount % 2 === 0) {
       this.bossArray.push(new Boss(this, this.bossLives))
     } else {
+      
       if (Math.random() < 0.5 && this.columns * this.enemySize < this.width * 0.8) {
         this.columns++
       } else if (this.rows * this.enemySize < this.height * 0.6) {
         this.rows++
       }
+      
       this.waves.push(new Wave(this))
     }
+    
     this.waves = this.waves.filter(object => !object.markedForDeletion)
   }
 
@@ -489,6 +519,7 @@ window.addEventListener('load', function() {
   const game = new Game(canvas)
   
   let lastTime = 0
+  
   function animate(timeStamp) {
     const deltaTime = timeStamp - lastTime
     lastTime = timeStamp

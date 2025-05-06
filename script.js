@@ -161,7 +161,7 @@ class Rhinomorph extends Enemy {
     this.lives = 4
     this.maxLives = this.lives
   }
-  
+
   hit(damage) {
     this.lives -= damage
     this.frameX = this.maxLives - Math.floor(this.lives)
@@ -184,6 +184,19 @@ class Boss {
     this.frameX = 1
     this.frameY = Math.floor(Math.random() * 4)
     this.maxFrame = 11
+  }
+
+  draw(context) {
+    context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height)
+    if (this.lives > 0) {
+      context.save() 
+      context.textAlign = 'center'
+      context.shadowOffsetX = 3
+      context.shadowOffsetY = 3
+      context.shadowColor = 'black'
+      context.fillText(this.lives, this.x + this.width * 0.5, this.y + 50)
+      context.restore()
+    }
   }
 
   hit(damage) {

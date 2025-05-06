@@ -353,15 +353,18 @@ class Game {
       projectile.update()
       projectile.draw(context)
     })
+    this.bossArray.forEach(boss => {
+      boss.draw(context)
+      boss.update()
+    })
+    this.bossArray = this.bossArray.filter(object => !object.markedForDeletion)
     this.player.draw(context)
     this.player.update()
     this.waves.forEach(wave => {
       wave.render(context)
       if (wave.enemies.length < 1 && !wave.nextWaveTrigger & !this.gameOver) {
         this.newWave()
-        this.waveCount++
         wave.nextWaveTrigger = true
-        if (this.player.lives < this.player.maxLives) this.player.lives++
       }
     })
   }

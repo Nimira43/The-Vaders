@@ -231,20 +231,28 @@ class Game {
   }
 
   render(context) {
+    if (this.spriteTimer > this.spriteInterval) {
+      this.spriteUpdate = true
+      this.spriteTimer = 0
+    } else {
+      this.spriteUpdate = false
+      this.spriteTimer += deltaTime
+    }
+
     this.drawStatusText(context)
-    this.player.draw(context)
-    this.player.update()
     this.projectilesPool.forEach(projectile => {
       projectile.update()
       projectile.draw(context)
     })
+    this.player.draw(context)
+    this.player.update()
     this.waves.forEach(wave => {
       wave.render(context)
       if (wave.enemies.length < 1 && !wave.nextWaveTrigger & !this.gameOver) {
         this.newWave()
         this.waveCount++
         wave.nextWaveTrigger = true
-        this.player.lives++
+        if (this.player.lives < this.player.maxLives) this.player.lives++
       }
     })
   }

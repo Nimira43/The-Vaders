@@ -26,9 +26,18 @@ class Player {
   }
 
   update() {
-    if (this.game.keys.indexOf('ArrowLeft') > -1) this.x -= this.speed
-    if (this.game.keys.indexOf('ArrowRight') > -1) this.x += this.speed
+    if (this.game.keys.indexOf('ArrowLeft') > -1) {
+      this.x -= this.speed
+      this.jetsFrame = 0
+    } else if (this.game.keys.indexOf('ArrowRight') > -1) {
+      this.x += this.speed
+      this.jetsFrame = 2
+    } else {
+      this.jetsFrame = 1
+    }
+        
     if (this.x < -this.width * 0.5) this.x = -this.width * 0.5
+    
     else if (this.x > this.game.width - this.width * 0.5) this.x = this.game.width - this.width * 0.5
   }
 

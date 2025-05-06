@@ -275,7 +275,7 @@ class Boss {
   draw(context) {
     context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height)
     
-    if (this.lives > 0) {
+    if (this.lives > 1) {
       context.save() 
       context.textAlign = 'center'
       context.shadowOffsetX = 3
@@ -296,7 +296,7 @@ class Boss {
     if (
       this.x < 0 ||
       this.x > this.game.width - this.width &&
-      this.lives > 0
+      this.lives > 1
     ) {
       this.speedX *= -1
       this.speedY = this.height * 0.5
@@ -309,7 +309,7 @@ class Boss {
       if (
         this.game.checkCollision(this, projectile) &&
         !projectile.free &&
-        this.lives > 0 &&
+        this.lives > 1 &&
         this.y >= 0
       ) {
         this.hit(1)
@@ -317,7 +317,7 @@ class Boss {
       }
     })
 
-    if (this.game.checkCollision(this, this.game.player) && this.lives > 0) {
+    if (this.game.checkCollision(this, this.game.player) && this.lives > 1) {
       this.game.gameOver = true
       this.lives = 0
     }
@@ -340,7 +340,7 @@ class Boss {
   hit(damage) {
     this.lives -= damage
 
-    if (this.lives > 0) this.frameX = 1
+    if (this.lives > 1) this.frameX = 1
   }
 }
 

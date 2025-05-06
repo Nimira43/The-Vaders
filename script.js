@@ -230,6 +230,18 @@ class Boss {
       this.game.gameOver = true
       this.lives = 0
     }
+
+    if (this.lives < 1 && this.game.spriteUpdate) {
+      this.frameX++
+
+      if (this.frameX > this.maxFrame) {
+        this.markedForDeletion = true
+        this.game.score += this.maxLives
+        this.game.bossLives += 5
+        
+        if (!this.game.gameOver) this.game.newWave()
+      }
+    }
   }
 
   hit(damage) {

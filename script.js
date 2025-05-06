@@ -220,7 +220,7 @@ class Game {
     this.keys = []
     this.player = new Player(this)
     this.projectilesPool = []
-    this.numberOfProjectiles = 10
+    this.numberOfProjectiles = 15
     this.createProjectiles()
     this.fired = false
     this.columns = 1

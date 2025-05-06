@@ -281,6 +281,8 @@ class Wave {
       enemy.draw(context)
     })
     this.enemies = this.enemies.filter(object => !object.markedForDeletion)
+
+    if (this.enemies.length <= 0) this.markedForDeletion = true
   }
 
   create() {

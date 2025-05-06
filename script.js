@@ -175,6 +175,7 @@ class Enemy {
       this.game.gameOver = true
     }
   }
+  
   hit(damage) {
     this.lives -= damage
   }

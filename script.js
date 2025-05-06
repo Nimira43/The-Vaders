@@ -216,7 +216,7 @@ class Boss {
     this.game.projectilesPool.forEach(projectile => {
       
       if (
-        this.game.checkCollision(this.projectile) &&
+        this.game.checkCollision(this, projectile) &&
         !projectile.free &&
         this.lives > 0 &&
         this.y >= 0

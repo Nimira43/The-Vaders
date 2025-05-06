@@ -63,7 +63,6 @@ class BigLaser extends Laser {
   }
 }
 
-
 class Player {
   constructor(game) {
     this.game = game
@@ -88,6 +87,10 @@ class Player {
   draw(context) {
     if (this.game.keys.indexOf('1') > -1) {
       this.frameX = 1
+    } else if (this.game.keys.indexOf('2') > -1) {
+      this.smallLaser.render(context)
+    } else if (this.game.keys.indexOf('3') > -1) {
+      this.bigLaser.render(context)
     } else {
       this.frameX = 0
     }

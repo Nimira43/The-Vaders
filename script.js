@@ -161,6 +161,10 @@ class Rhinomorph extends Enemy {
     this.lives = 4
     this.maxLives = this.lives
   }
+  hit(damage) {
+    this.lives -= damage
+    this.frameX = this.maxLives - Math.floor(this.lives)
+  }
 }
 
 class Wave {

@@ -227,7 +227,6 @@ class Game {
       const index = this.keys.indexOf(e.key)
       if (index > -1) this.keys.splice(index, 1)
     })
-
   }
 
   render(context) {
@@ -285,8 +284,11 @@ class Game {
     context.shadowColor = 'black'
     context.fillText('Score: ' + this.score, 20, 40)
     context.fillText('Wave: ' + this.waveCount, 20, 80)
+    for (let i = 0; i < this.player.maxLives; i++) {
+      context.strokeRect(20 + 20 * i, 100, 10, 15)
+    }
     for (let i = 0; i < this.player.lives; i++) {
-      context.fillRect(20 + 10 * i, 100, 5, 20)
+      context.fillRect(20 + 20 * i, 100, 10, 15)
     }
     if (this.gameOver) {
       context.textAlign = 'center'
@@ -326,7 +328,6 @@ window.addEventListener('load', function() {
   canvas.height = 800
   ctx.fillStyle = 'white'
   ctx.strokeStyle = 'white'
-  ctx.lineWidth = 5
   ctx.font = '30px Verdana'
 
   const game = new Game(canvas)

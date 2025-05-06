@@ -21,7 +21,7 @@ class BigLaser extends Laser {
     super(game) 
   }
   render(context) {
-    
+
   }
 }
 
@@ -40,6 +40,11 @@ class Player {
     this.jets_image = document.getElementById('player_jets')
     this.frameX = 0
     this.jetsFrame = 1  
+    this.smallLaser = new SmallLaser(this.game)
+    this.bigLaser = new BigLaser(this.game)
+    this.energy = 50
+    this.MaxEngery = 100
+    this.cooldown = false
   }
 
   draw(context) {

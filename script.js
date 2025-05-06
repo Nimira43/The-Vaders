@@ -414,12 +414,20 @@ class Game {
   }
 
   newWave() {
-    if (Math.random() < 0.5 && this.columns * this.enemySize < this.width * 0.8) {
-      this.columns++
-    } else if (this.rows * this.enemySize < this.height * 0.6) {
-      this.rows++
+    this.waveCount++
+    if (this.player.lives < this.player.maxLives) this.player.lives++
+
+    if (this.waveCount % 2 === 0) {
+      this.bossArray.push(new Boss(this, this.bossLives))
+    } else {
+      if (Math.random() < 0.5 && this.columns * this.enemySize < this.width * 0.8) {
+        this.columns++
+      } else if (this.rows * this.enemySize < this.height * 0.6) {
+        this.rows++
+      }
+      this.waves.push(new Wave(this))
     }
-    this.waves.push(new Wave(this))
+    this.waves = this.waves.filter(object => !object.markedForDeletion)
   }
 
   restart() {

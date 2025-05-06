@@ -111,10 +111,9 @@ class Enemy {
     this.y = y + this.positionY
     this.game.projectilesPool.forEach(projectile => {
 
-      if (!projectile.free && this.game.checkCollision(this, projectile)) {
-        this.markedForDeletion = true
+      if (!projectile.free && this.game.checkCollision(this, projectile) && this.lives > 0) {
+        this.hit(1)
         projectile.reset()
-        if (!this.game.gameOver) this.game.score++
       }
     })
 

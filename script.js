@@ -80,7 +80,7 @@ class Player {
     this.smallLaser = new SmallLaser(this.game)
     this.bigLaser = new BigLaser(this.game)
     this.energy = 50
-    this.MaxEngery = 100
+    this.maxEnergy = 100
     this.cooldown = false
   }
 
@@ -100,6 +100,12 @@ class Player {
   }
 
   update() {
+    if (this.energy < this.maxEnergy) this.energy += 0.05
+    
+    if (this.energy < 1) this.cooldown = true
+      
+    else if (this.energy > this.maxEnergy * 0.2) this.cooldown = false
+    
     if (this.game.keys.indexOf('ArrowLeft') > -1) {
       this.x -= this.speed
       this.jetsFrame = 0

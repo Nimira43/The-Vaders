@@ -1,6 +1,9 @@
 class Laser {
-  constructor(game) {
-
+  constructor(game) { 
+    this.game = game
+    this.x = x 
+    this.y = y 
+    this.height = this.game.height - 50
   }
   
   render(context) {

@@ -199,6 +199,34 @@ class Boss {
     }
   }
 
+  update() {
+    this.speedY = 0
+    if (this.game.spriteUpdate && this.lives > 0) this.frameX = 0
+    if (this.y < 0) this.y += 4
+    if (
+      this.x < 0 ||
+      this.x > this.game.width - this.width &&
+      this.lives > 0
+    ) {
+      this.speedX *= -1
+      this.speedY = this.height * 0.5
+    }
+    this.x += this.speedX
+    this.y += this.speedY
+    this.game.projectilesPool.forEach(projectile => {
+      if (
+        this.game.checkCollision(this.projectile) &&
+        !projectile.free &&
+        this.lives > 0 &&
+        this.y >= 0
+      ) {
+        this.hit(1)
+        projectile.reset()
+      }
+    })
+
+  }
+
   hit(damage) {
     this.lives -= damage
     if (this.lives > 0) this.frameX = 1

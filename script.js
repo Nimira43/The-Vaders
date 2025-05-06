@@ -229,7 +229,7 @@ class Game {
     })
   }
 
-  render(context) {
+  render(context, deltaTime) {
     if (this.spriteTimer > this.spriteInterval) {
       this.spriteUpdate = true
       this.spriteTimer = 0

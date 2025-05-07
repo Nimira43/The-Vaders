@@ -283,6 +283,32 @@ class Eaglemorph extends Enemy {
   }
 }
 
+class EnemyProjectile {
+  constructor(game) {
+
+  }
+  
+  draw(context) {
+
+  }
+
+  update() {
+
+  }
+
+  start(x, y) {
+
+  }
+
+  reset() {
+
+  }
+
+  hit(damage) {
+
+  }
+}
+
 class Boss {
   constructor(game, bossLives) {
     this.game = game
@@ -505,7 +531,7 @@ class Game {
   }
 
   getEnemyProjectile() {
-    
+
   }
 
   getProjectile() {

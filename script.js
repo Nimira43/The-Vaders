@@ -302,7 +302,17 @@ class Eaglemorph extends Enemy {
 
 class EnemyProjectile {
   constructor(game) {
-
+    this.game = game
+    this.width = 50
+    this.height = 35
+    this.x = 0
+    this.y = 0
+    this.speed = Math.random() * 3 + 2
+    this.free = true
+    this.image = document.getElementById('enemyProjectile')
+    this.frameX = Math.floor(Math.random() * 4)
+    this.frameY = Math.floor(Math.random() * 2)
+    this.lives = 5
   }
   
   draw(context) {

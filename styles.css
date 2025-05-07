@@ -13,10 +13,12 @@ body {
 
 #beetlemorph,
 #rhinomorph,
+#squidmorph,
 #eaglemorph,
 #enemyProjectile,
 #player,
 #player_jets,
-#boss {
+#boss,
+#boss8 {
   display: none;
 }

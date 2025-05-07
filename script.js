@@ -547,11 +547,16 @@ class Game {
   }
 
   createEnemyProjectiles() {
-
+    for (let i = 0; i < this.numberOfEnemyProjectiles; i++) {
+      this.enemyProjectilesPool.push(new EnemyProjectileProjectile(this))
+    }
   }
 
   getEnemyProjectile() {
-
+    for (let i = 0; i < this.enemyProjectilesPool.length; i++) {
+      
+      if (this.enemyProjectilesPool[i].free) return this.enemyProjectilesPool[i]
+    }
   }
 
   checkCollision(a, b) {

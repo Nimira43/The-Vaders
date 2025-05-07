@@ -451,13 +451,14 @@ class Game {
       projectile.update()
       projectile.draw(context)
     })
+    this.player.draw(context)
+    this.player.update()
     this.bossArray.forEach(boss => {
       boss.draw(context)
       boss.update()
     })
     this.bossArray = this.bossArray.filter(object => !object.markedForDeletion)
-    this.player.draw(context)
-    this.player.update()
+    
     this.waves.forEach(wave => {
       wave.render(context)
       
@@ -505,6 +506,13 @@ class Game {
     for (let i = 0; i < this.player.lives; i++) {
       context.fillRect(20 + 20 * i, 100, 10, 15)
     }
+
+    context.save()
+    this.player.cooldown ? context.fillStyle = 'red' : context.fillStyle = 'gold'
+    for (let i = 0; i < this.player.energy; i++) {
+      context.fillRect(20 + 2 * i, 130, 2, 15);
+    }
+    context.restore()
     
     if (this.gameOver) {
       context.textAlign = 'center'

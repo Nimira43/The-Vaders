@@ -468,6 +468,9 @@ class Game {
     this.enemySize = 80
     this.waves = []
     this.waveCount = 1
+    this.enemyProjectilesPool = []
+    this.numberOfEnemyProjectiles = 15
+    this.createEnemyProjectiles()
     this.spriteUpdate = false
     this.spriteTimer = 0
     this.spriteInterval = 150
@@ -532,15 +535,19 @@ class Game {
     }
   }
 
-  getEnemyProjectile() {
-
-  }
-
   getProjectile() {
     for (let i = 0; i < this.projectilesPool.length; i++) {
       
       if (this.projectilesPool[i].free) return this.projectilesPool[i]
     }
+  }
+
+  createEnemyProjectiles() {
+
+  }
+
+  getEnemyProjectile() {
+
   }
 
   checkCollision(a, b) {

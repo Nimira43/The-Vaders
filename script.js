@@ -20,20 +20,12 @@ class Laser {
     if (this.game.spriteUpdate) {
       this.game.waves.forEach(wave => {
         wave.enemies.forEach(enemy => {
-          if (!projectile) {
-            console.warn("[8] Projectile is undefined—pool might be empty!");
-            return;
-          }
           if (this.game.checkCollision(enemy, this)) {
             enemy.hit(this.damage)
           }
         })
       })
       this.game.bossArray.forEach(boss => {
-        if (!projectile) {
-          console.warn("[7] Projectile is undefined—pool might be empty!");
-          return;
-        }
         if (this.game.checkCollision(boss, this) && boss.y >= 0) {
           boss.hit(this.damage)
         }
@@ -201,10 +193,6 @@ class Enemy {
     this.x = x + this.positionX
     this.y = y + this.positionY
     this.game.projectilesPool.forEach(projectile => {
-      if (!projectile) {
-        console.warn("[6] Projectile is undefined—pool might be empty!");
-        return;
-      }
       if (!projectile.free && this.game.checkCollision(this, projectile) && this.lives > 0) {
         this.hit(1)
         projectile.reset()
@@ -221,10 +209,7 @@ class Enemy {
         if (!this.game.gameOver) this.game.score += this.maxLives
       }
     }
-    if (!projectile) {
-      console.warn("[5] Projectile is undefined—pool might be empty!");
-      return;
-    }
+
     if (this.game.checkCollision(this, this.game.player) && this.lives > 0) {
       this.lives = 0
       this.game.player.lives--
@@ -307,7 +292,7 @@ class Eaglemorph extends Enemy {
 
   shoot() {
     const projectile = this.game.getEnemyProjectile()
-    if (projectile) {
+    if (projectile) {    
       projectile.start(this.x + this.width * 0.5, this.y + this.height * 0.5)
       this.shots++
     }
@@ -339,10 +324,7 @@ class EnemyProjectile {
     if (!this.free) {
       this.y += this.speed
       if (this.y > this.game.height) this.reset()
-      if (!projectile) {
-        console.warn("[4] Projectile is undefined—pool might be empty!");
-        return;
-      }
+     
       if (this.game.checkCollision(this, this.game.player)) {
         this.reset()
         this.game.player.lives--
@@ -350,10 +332,7 @@ class EnemyProjectile {
       }
 
       this.game.projectilesPool.forEach(projectile => {
-        if (!projectile) {
-          console.warn("[3] Projectile is undefined—pool might be empty!");
-          return;
-        }
+       
         if (this.game.checkCollision(this.projectile) && !projectile.free) {
           projectile.reset()
           this.hit(1)
@@ -434,10 +413,7 @@ class Boss {
     this.x += this.speedX
     this.y += this.speedY
     this.game.projectilesPool.forEach(projectile => {
-      if (!projectile) {
-        console.warn("[1] Projectile is undefined—pool might be empty!");
-        return;
-      }
+     
       if (
         this.game.checkCollision(this, projectile) &&
         !projectile.free &&
@@ -448,10 +424,7 @@ class Boss {
         projectile.reset()
       }
     })
-    if (!projectile) {
-      console.warn("[2] Projectile is undefined—pool might be empty!");
-      return;
-    }
+    
     if (this.game.checkCollision(this, this.game.player) && this.lives >= 1) {
       this.game.gameOver = true
       this.lives = 0

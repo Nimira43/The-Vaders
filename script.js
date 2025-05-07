@@ -342,7 +342,7 @@ class EnemyProjectile {
   }
 
   start(x, y) {
-    this.x = x - the.width * 0.5
+    this.x = x - this.width * 0.5
     this.y = y
     this.free = false
     this.frameX = Math.floor(Math.random() * 4) 
@@ -495,7 +495,7 @@ class Wave {
 
         if (randomNumber < 0.25) {
           this.enemies.push(new Squidmorph(this.game, enemyX, enemyY))
-        } else if (randomNumber() < 0.5) {
+        } else if (randomNumber < 0.5) {
           this.enemies.push(new Eaglemorph(this.game, enemyX, enemyY))
         } else if (randomNumber < 0.75) {
           this.enemies.push(new Rhinomorph(this.game, enemyX, enemyY))  

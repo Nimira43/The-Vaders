@@ -511,6 +511,10 @@ class Game {
       projectile.update()
       projectile.draw(context)
     })
+    this.enemyProjectilesPool.forEach(projectile => {
+      projectile.update()
+      projectile.draw(context)
+    })
     this.player.draw(context)
     this.player.update()
     this.bossArray.forEach(boss => {

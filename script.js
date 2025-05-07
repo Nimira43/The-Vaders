@@ -1,8 +1,8 @@
 class Laser {
   constructor(game) { 
     this.game = game
-    this.x = x 
-    this.y = y 
+    this.x = 0
+    this.y = 0 
     this.height = this.game.height - 50
   }
   

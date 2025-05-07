@@ -9,6 +9,7 @@ class Laser {
   render(context) {
     this.x = this.game.player.x + this.game.player.width * 0.5 - this.width * 0.5
     this.game.player.energy -= this.damage
+    
     context.save()
     context.fillStyle = 'gold'
     context.fillRect(this.x, this.y, this.width, this.height)
@@ -251,6 +252,26 @@ class Rhinomorph extends Enemy {
   hit(damage) {
     this.lives -= damage
     this.frameX = this.maxLives - Math.floor(this.lives)
+  }
+}
+
+class Eaglemorph extends Enemy {
+  constructor(game, positionX, positionY) {
+    super(game, positionX, positionY)
+    this.image = document.getElementById('eaglemorph')
+    this.frameX = 0
+    this.maxFrame = 8
+    this.frameY = Math.floor(Math.random() * 4)
+    this.lives = 4
+    this.maxLives = this.lives
+    this.shots = 0
+  }
+
+  hit(damage) {
+    if (this.shots < 4) this.shoot()
+    this.lives -= damage
+    this.frameX = this.maxLives - Math.floor(this.lives)
+    this.y += 3
   }
 }
 

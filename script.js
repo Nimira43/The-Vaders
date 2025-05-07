@@ -630,7 +630,7 @@ class Game {
     this.waves = []
     this.bossArray = []
     this.bossLives = 10
-    this.bossArray.push(new Boss(this, this.bossLives))
+    this.waves.push(new Wave(this))
     this.waveCount = 1
     this.score = 0
     this.gameOver = false

@@ -440,7 +440,9 @@ class Wave {
         let enemyX = x * this.game.enemySize
         let enemyY = y * this.game.enemySize
         
-        if (Math.random() < 0.5) {
+        if (Math.random() < 0.3) {
+          this.enemies.push(new Eaglemorph(this.game, enemyX, enemyY))
+        } else if (Math.random() < 0.6) {
           this.enemies.push(new Rhinomorph(this.game, enemyX, enemyY))  
         } else {
           this.enemies.push(new Beetlemorph(this.game, enemyX, enemyY))

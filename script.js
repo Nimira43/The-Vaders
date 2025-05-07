@@ -59,7 +59,7 @@ class BigLaser extends Laser {
   render(context) {
     if (this.game.player.energy > 1 && !this.game.player.cooldown) {
       super.render(context)
-      this.game.player.frameX = 2
+      this.game.player.frameX = 3
     }
   }
 }
@@ -252,6 +252,23 @@ class Rhinomorph extends Enemy {
   hit(damage) {
     this.lives -= damage
     this.frameX = this.maxLives - Math.floor(this.lives)
+  }
+}
+
+class Squidmorph extends Enemy {
+  constructor(game, positionX, positionY) {
+    super(game, positionX, positionY)
+    this.image = document.getElementById('squidmorph')
+    this.frameX = 0
+    this.maxFrame = 16
+    this.frameY = Math.floor(Math.random() * 4)
+    this.lives = 9
+    this.maxLives = this.lives
+  }
+
+  hit(damage) {
+    this.lives -= damage
+    if (this.lives >= 1) this.frameX = this.maxLives - Math.floor(this.lives)
   }
 }
 

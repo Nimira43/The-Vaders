@@ -316,7 +316,9 @@ class EnemyProjectile {
   }
   
   draw(context) {
-
+    if (!this.free) {
+      context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width,this.height, this.x, this.y, this.width, this.height)
+    }
   }
 
   update() {

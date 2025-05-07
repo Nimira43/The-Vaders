@@ -322,7 +322,23 @@ class EnemyProjectile {
   }
 
   update() {
+    if (!this.free) {
+      this.y += this.speed
+      if (this.y > this.game.height) this.reset()
+      if (this.game.checkCollision(this, this.game.player)) {
+        this.reset()
+        this.game.player.lives--
+        if (this.game.player.lives < 1) this.game.gameOver
+      }
 
+      this.game.projectilesPool.forEach(projectile => {
+        if (this.game.checkCollision(this.projectile) && !projectile.free) {
+          projectile.reset()
+          this.hit(1)
+          if (this.lives < 1) this.reset() 
+        }
+      })
+    }
   }
 
   start(x, y) {

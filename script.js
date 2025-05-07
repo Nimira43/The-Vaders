@@ -342,15 +342,22 @@ class EnemyProjectile {
   }
 
   start(x, y) {
-
+    this.x = x - the.width * 0.5
+    this.y = y
+    this.free = false
+    this.frameX = Math.floor(Math.random() * 4) 
+    this.frameY = Math.floor(Math.random() * 2)
+    this.lives = 5
+    this.speed = Math.random() * 3 + 2
   }
 
   reset() {
-
+    this.free = true
   }
 
   hit(damage) {
-
+    this.lives -= damage
+    this.speed *= 0.6
   }
 }
 

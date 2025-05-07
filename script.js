@@ -273,6 +273,14 @@ class Eaglemorph extends Enemy {
     this.frameX = this.maxLives - Math.floor(this.lives)
     this.y += 3
   }
+
+  shoot() {
+    const projectile = this.game.getEnemyProjectile()
+    if (projectile) {
+      projectile.start(this.x + this.width * 0.5, this.y + this.height * 0.5)
+      this.shots++
+    }
+  }
 }
 
 class Boss {
@@ -494,6 +502,10 @@ class Game {
     for (let i = 0; i < this.numberOfProjectiles; i++) {
       this.projectilesPool.push(new Projectile())
     }
+  }
+
+  getEnemyProjectile() {
+    
   }
 
   getProjectile() {

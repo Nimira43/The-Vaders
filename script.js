@@ -396,11 +396,8 @@ class Boss {
 
   update() {
     this.speedY = 0
-
     if (this.game.spriteUpdate && this.lives >= 1) this.frameX = 0
-    
     if (this.y < 0) this.y += 4
-    
     if (
       this.x < 0 ||
       this.x > this.game.width - this.width &&
@@ -447,7 +444,6 @@ class Boss {
 
   hit(damage) {
     this.lives -= damage
-
     if (this.lives >= 1) this.frameX = 1
   }
 }

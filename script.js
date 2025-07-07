@@ -507,12 +507,14 @@ class Wave {
         let enemyY = y * this.game.enemySize
         let randomNumber = Math.random()
 
-        if (randomNumber < 0.25) {
+        if (randomNumber < 0.2) {
           this.enemies.push(new Squidmorph(this.game, enemyX, enemyY))
-        } else if (randomNumber < 0.5) {
+        } else if (randomNumber < 0.4) {
           this.enemies.push(new Rhinomorph(this.game, enemyX, enemyY))
-        } else if (randomNumber < 0.7) {
+        } else if (randomNumber < 0.5) {
           this.enemies.push(new Eaglemorph(this.game, enemyX, enemyY))  
+        } else if (randomNumber < 0.8) {
+          this.enemies.push(new Lobstermorph(this.game, enemyX, enemyY))  
         } else {
           this.enemies.push(new Beetlemorph(this.game, enemyX, enemyY))
         }

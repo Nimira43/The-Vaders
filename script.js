@@ -271,6 +271,23 @@ class Squidmorph extends Enemy {
   }
 }
 
+class Lobstermorph extends Enemy {
+  constructor(game, positionX, positionY) {
+    super(game, positionX, positionY)
+    this.image = document.getElementById('lobstermorph')
+    this.frameX = 0
+    this.maxFrame = 14
+    this.frameY = Math.floor(Math.random() * 4)
+    this.lives = 8
+    this.maxLives = this.lives
+  }
+
+  hit(damage) {
+    this.lives -= damage
+    if (this.lives >= 1) this.frameX = this.maxLives - Math.floor(this.lives)
+  }
+}
+
 class Eaglemorph extends Enemy {
   constructor(game, positionX, positionY) {
     super(game, positionX, positionY)

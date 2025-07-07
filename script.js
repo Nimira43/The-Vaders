@@ -350,7 +350,7 @@ class EnemyProjectile {
 
       this.game.projectilesPool.forEach(projectile => {
        
-        if (this.game.checkCollision(this.projectile) && !projectile.free) {
+        if (this.game.checkCollision(this, projectile) && !projectile.free) {
           projectile.reset()
           this.hit(1)
           if (this.lives < 1) this.reset() 

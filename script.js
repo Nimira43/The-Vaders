@@ -455,7 +455,6 @@ class Boss {
         if (!this.game.gameOver) this.game.newWave()
       }
     }
-
     if (this.y + this.height > this.game.height) this.game.gameOver = true
   }
 

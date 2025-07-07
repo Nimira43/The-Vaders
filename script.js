@@ -631,10 +631,6 @@ class Game {
   }
 
   checkCollision(a, b) {
-    if (!a || !b) {
-    console.warn('Collision check failed - undefined object:', a, b);
-    return false;
-  }
     return (
       a.x < b.x + b.width &&
       a.x + a.width > b.x &&
